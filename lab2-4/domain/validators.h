@@ -14,4 +14,8 @@ bool validateModel(char model[20]);
 
 bool validatePrice(char price[20]);
 
+bool validateQuantity(char quantity[20]);
+
+bool validateOption(char option[20]);
+
 #endif //LAB2_4_VALIDATORS_H

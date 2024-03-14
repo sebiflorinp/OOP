@@ -14,4 +14,6 @@ add_executable(lab2_4 main.c
         repos/repos.c
         repos/repos.h
         controllers/controllers.c
-        controllers/controllers.h)
+        controllers/controllers.h
+        utils/utils.c
+        utils/utils.h)

@@ -85,6 +85,12 @@ build CMakeFiles/lab2_4.dir/controllers/controllers.c.o: C_COMPILER__lab2_4_unsc
   OBJECT_DIR = CMakeFiles/lab2_4.dir
   OBJECT_FILE_DIR = CMakeFiles/lab2_4.dir/controllers
 
+build CMakeFiles/lab2_4.dir/utils/utils.c.o: C_COMPILER__lab2_4_unscanned_Debug /home/sebifp/ubb/oop/lab2-4/utils/utils.c || cmake_object_order_depends_target_lab2_4
+  DEP_FILE = CMakeFiles/lab2_4.dir/utils/utils.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/lab2_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab2_4.dir/utils
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target lab2_4
@@ -93,7 +99,7 @@ build CMakeFiles/lab2_4.dir/controllers/controllers.c.o: C_COMPILER__lab2_4_unsc
 #############################################
 # Link the executable lab2_4
 
-build lab2_4: C_EXECUTABLE_LINKER__lab2_4_Debug CMakeFiles/lab2_4.dir/main.c.o CMakeFiles/lab2_4.dir/ui/ui.c.o CMakeFiles/lab2_4.dir/domain/models.c.o CMakeFiles/lab2_4.dir/domain/validators.c.o CMakeFiles/lab2_4.dir/repos/repos.c.o CMakeFiles/lab2_4.dir/controllers/controllers.c.o
+build lab2_4: C_EXECUTABLE_LINKER__lab2_4_Debug CMakeFiles/lab2_4.dir/main.c.o CMakeFiles/lab2_4.dir/ui/ui.c.o CMakeFiles/lab2_4.dir/domain/models.c.o CMakeFiles/lab2_4.dir/domain/validators.c.o CMakeFiles/lab2_4.dir/repos/repos.c.o CMakeFiles/lab2_4.dir/controllers/controllers.c.o CMakeFiles/lab2_4.dir/utils/utils.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/lab2_4.dir
   POST_BUILD = :

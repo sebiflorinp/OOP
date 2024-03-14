@@ -1,0 +1,30 @@
+        -:    0:Source:/home/sebifp/ubb/oop/lab2-4/domain/models.c
+        -:    0:Graph:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/domain/models.c.gcno
+        -:    0:Data:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/domain/models.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <string.h>
+        -:    2:#include "models.h"
+        -:    3:
+        -:    4:/*
+        -:    5: * Creates a new product
+        -:    6: * Preconditions: id: a positive integer
+        -:    7: *                type: a char array with the length of 20
+        -:    8: *                manufacturer: a char array with the length of 30
+        -:    9: *                model: a char array with the length of 20
+        -:   10: *                price: a positive float
+        -:   11: *                quantity: a positive integer
+        -:   12: * Post-conditions: an instance of the Product struct
+        -:   13: */
+function createProduct called 0 returned 0% blocks executed 0%
+    #####:   14:Product createProduct(int id, char type[20], char manufacturer[20], char model[20], float price, int quantity) {
+        -:   15:    // assigns the values to the newProduct
+        -:   16:    Product newProduct;
+    #####:   17:    newProduct.id = id;
+    #####:   18:    strcpy(newProduct.type, type);
+    #####:   19:    strcpy(newProduct.manufacturer, manufacturer);
+    #####:   20:    strcpy(newProduct.model, model);
+    #####:   21:    newProduct.price = price;
+    #####:   22:    newProduct.quantity = quantity;
+    #####:   23:    return newProduct;
+    %%%%%:   23-block  0
+        -:   24:}

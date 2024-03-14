@@ -1,0 +1,29 @@
+        -:    0:Source:/home/sebifp/ubb/oop/lab2-4/ui/ui.c
+        -:    0:Graph:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/ui/ui.c.gcno
+        -:    0:Data:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/ui/ui.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <stdio.h>
+        -:    2:#include "ui.h"
+        -:    3:
+function app called 1 returned 100% blocks executed 100%
+        1:    4:void app() {
+        1:    5:    printf("This is a electronics store shop.\n");
+        1:    5-block  0
+call    0 returned 1
+        1:    6:    printf(
+call    0 returned 1
+        -:    7:            "You can interact with it by using the following commands:\n"
+        -:    8:           "  1. Add new product.\n"
+        -:    9:           "  2. Update product.\n"
+        -:   10:           "  3. Delete product.\n"
+        -:   11:           "  4. Display available products.\n"
+        -:   12:           "  5. Display products filtered by a certain criteria.\n"
+        -:   13:           "  6. Exit the application.\n"
+        -:   14:           );
+        -:   15:    char nume[20];
+        1:   16:    fgets(nume, 20, stdin);
+call    0 returned 1
+        1:   17:    printf("%s", nume);
+call    0 returned 1
+        1:   18:}
+        -:   19:

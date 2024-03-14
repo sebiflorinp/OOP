@@ -1,4 +1,6 @@
 #include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "validators.h"
 
 /*
@@ -85,6 +87,11 @@ bool validateModel(char model[20]) {
     return true;
 }
 
+/*
+ * Checks if the received price is valid
+ * Preconditions: price: a char array with the length of 20
+ * Post-conditions: a boolean
+ */
 bool validatePrice(char price[20]) {
     // check if the string is not an empty string
     if (strlen(price) == 0) {
@@ -101,6 +108,53 @@ bool validatePrice(char price[20]) {
             }
     }
     if (dotCounter > 1) {
+        return false;
+    }
+
+    return true;
+}
+
+/*
+ * Checks if the received quantity is valid
+ * Preconditions: quantity: a char array with the length of 20
+ * Post-conditions: a boolean
+ */
+bool validateQuantity(char quantity[20]) {
+    // check if the string is not an empty string
+    if (strlen(quantity) == 0) {
+        return false;
+    }
+
+    // check if the string is only made of numbers
+    for (int i = 0; i < strlen(quantity); i++) {
+        if (!('0' <= quantity[i] && quantity[i] <= '9')) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+/*
+ * Checks if the received option is valid.
+ * Preconditions: option: a char array with the length of 20
+ * Post-conditions: a boolean
+ */
+bool validateOption(char option[20]) {
+    // check if the string is an empty string
+    if (strlen(option) == 0) {
+        return false;
+    }
+
+    // check if the string is only made of numbers
+    for (int i = 0; i < strlen(option); i++) {
+        if (!('0' <= option[i] && option[i] <= '9')) {
+            return false;
+        }
+    }
+
+    // check if the option is between 1 and 6
+    if (!(1 <= atoi(option) && atoi(option) <= 6)) {
         return false;
     }
 

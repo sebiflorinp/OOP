@@ -1,0 +1,272 @@
+        -:    0:Source:/home/sebifp/ubb/oop/lab2-4/domain/validators.c
+        -:    0:Graph:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/domain/validators.c.gcno
+        -:    0:Data:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/domain/validators.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <string.h>
+        -:    2:#include "validators.h"
+        -:    3:
+        -:    4:/*
+        -:    5: * Checks if the received id is valid.
+        -:    6: * Preconditions: id: a char array with the length of 20
+        -:    7: * Post-conditions: a boolean
+        -:    8: */
+function validateId called 0 returned 0% blocks executed 0%
+    #####:    9:bool validateId(char id[20]) {
+        -:   10:    // check if the string is not an empty string
+    #####:   11:    if (strlen(id) == 0) {
+    %%%%%:   11-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   12:        return false;
+    %%%%%:   12-block  0
+        -:   13:    }
+        -:   14:    // check if the array contains only numbers
+    #####:   15:    for (int i = 0; i < strlen(id); i++) {
+    %%%%%:   15-block  0
+    %%%%%:   15-block  1
+    %%%%%:   15-block  2
+branch  0 never executed
+branch  1 never executed
+    #####:   16:        if (!('0' <= id[i] && id[i] <= '9')) {
+    %%%%%:   16-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   16-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:   17:            return false;
+    %%%%%:   17-block  0
+        -:   18:        }
+        -:   19:    }
+        -:   20:
+    #####:   21:    return true;
+    %%%%%:   21-block  0
+        -:   22:}
+        -:   23:
+        -:   24:/*
+        -:   25: * Checks if the received type is valid
+        -:   26: * Preconditions: type: a char array with the length of 20
+        -:   27: * Post-conditions: a boolean
+        -:   28: */
+function validateType called 0 returned 0% blocks executed 0%
+    #####:   29:bool validateType(char type[20]) {
+        -:   30:    // check if the type is one of the following: Fridge, Computer, Laptop
+    #####:   31:    if (!(strcmp(type, "Fridge") == 0 || strcmp(type, "Computer") == 0 || strcmp(type, "Laptop") == 0)) {
+    %%%%%:   31-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   31-block  1
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   31-block  2
+branch  4 never executed
+branch  5 never executed
+    #####:   32:        return false;
+    %%%%%:   32-block  0
+        -:   33:    }
+        -:   34:
+    #####:   35:    return true;
+    %%%%%:   35-block  0
+        -:   36:}
+        -:   37:
+        -:   38:/*
+        -:   39: * Checks if the received manufacturer is valid
+        -:   40: * Preconditions: manufacturer: a char array with the length of 20
+        -:   41: * Post-conditions: a boolean
+        -:   42: */
+function validateManufacturer called 0 returned 0% blocks executed 0%
+    #####:   43:bool validateManufacturer(char manufacturer[20]) {
+        -:   44:    // check if the manufacturer is not an empty string
+    #####:   45:    if (strlen(manufacturer) == 0) {
+    %%%%%:   45-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   46:        return false;
+    %%%%%:   46-block  0
+        -:   47:    }
+        -:   48:
+        -:   49:    // check if the manufacturer is made only of letters and numbers
+    #####:   50:    for (int i = 0; i < strlen(manufacturer); i++) {
+    %%%%%:   50-block  0
+    %%%%%:   50-block  1
+    %%%%%:   50-block  2
+branch  0 never executed
+branch  1 never executed
+    #####:   51:        if (!(
+    #####:   52:                ('0' <= manufacturer[i] && manufacturer[i] <='9') ||
+    %%%%%:   52-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   52-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:   53:                ('a' <= manufacturer[i] && manufacturer[i] <='z') ||
+    %%%%%:   53-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   53-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:   54:                ('A' <=manufacturer[i] && manufacturer[i] <= 'Z')
+    %%%%%:   54-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   54-block  1
+branch  2 never executed
+branch  3 never executed
+        -:   55:                )) {
+    #####:   56:            return false;
+    %%%%%:   56-block  0
+        -:   57:        }
+        -:   58:    }
+        -:   59:
+    #####:   60:    return true;
+    %%%%%:   60-block  0
+        -:   61:}
+        -:   62:
+        -:   63:/*
+        -:   64: * Checks if the received model is valid
+        -:   65: * Preconditions: a char array with the length of 20
+        -:   66: * Post-conditions: a boolean
+        -:   67: */
+function validateModel called 0 returned 0% blocks executed 0%
+    #####:   68:bool validateModel(char model[20]) {
+        -:   69:    // check if the string is not an empty string
+    #####:   70:    if (strlen(model) == 0) {
+    %%%%%:   70-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   71:        return false;
+    %%%%%:   71-block  0
+        -:   72:    }
+        -:   73:
+        -:   74:    // check if the model is made only of numbers and letters
+    #####:   75:    for (int i = 0; i < strlen(model); i++) {
+    %%%%%:   75-block  0
+    %%%%%:   75-block  1
+    %%%%%:   75-block  2
+branch  0 never executed
+branch  1 never executed
+    #####:   76:        if (!(
+    #####:   77:                ('0' <= model[i] && model[i] <='9') ||
+    %%%%%:   77-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   77-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:   78:                ('a' <= model[i] && model[i] <='z') ||
+    %%%%%:   78-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   78-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:   79:                ('A' <=model[i] && model[i] <= 'Z')
+    %%%%%:   79-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   79-block  1
+branch  2 never executed
+branch  3 never executed
+        -:   80:                )) {
+    #####:   81:            return false;
+    %%%%%:   81-block  0
+        -:   82:        }
+        -:   83:    }
+        -:   84:
+    #####:   85:    return true;
+    %%%%%:   85-block  0
+        -:   86:}
+        -:   87:
+        -:   88:/*
+        -:   89: * Checks if the received price is valid
+        -:   90: * Preconditions: price: a char array with the length of 20
+        -:   91: * Post-conditions: a boolean
+        -:   92: */
+function validatePrice called 0 returned 0% blocks executed 0%
+    #####:   93:bool validatePrice(char price[20]) {
+        -:   94:    // check if the string is not an empty string
+    #####:   95:    if (strlen(price) == 0) {
+    %%%%%:   95-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   96:        return false;
+    %%%%%:   96-block  0
+        -:   97:    }
+        -:   98:    // check if the string is only made of numbers and no more than one '.'
+    #####:   99:    int dotCounter = 0;
+    #####:  100:    for (int i = 0; i < strlen(price); i++) {
+    %%%%%:  100-block  0
+    %%%%%:  100-block  1
+    %%%%%:  100-block  2
+branch  0 never executed
+branch  1 never executed
+    #####:  101:        if (price[i] == '.') {
+    %%%%%:  101-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  102:            dotCounter++;
+    %%%%%:  102-block  0
+        -:  103:        } else
+    #####:  104:            if (!('0' <= price[i] && price[i] <= '9')) {
+    %%%%%:  104-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  104-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:  105:                return false;
+    %%%%%:  105-block  0
+        -:  106:            }
+        -:  107:    }
+    #####:  108:    if (dotCounter > 1) {
+    %%%%%:  108-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  109:        return false;
+    %%%%%:  109-block  0
+        -:  110:    }
+        -:  111:
+    #####:  112:    return true;
+    %%%%%:  112-block  0
+        -:  113:}
+        -:  114:
+        -:  115:/*
+        -:  116: * Checks if the received quantity is valid
+        -:  117: * Preconditions: quantity: a char array with the length of 20
+        -:  118: * Post-conditions: a boolean
+        -:  119: */
+function validateQuantity called 0 returned 0% blocks executed 0%
+    #####:  120:bool validateQuantity(char quantity[20]) {
+        -:  121:    // check if the string is not an empty string
+    #####:  122:    if (strlen(quantity) == 0) {
+    %%%%%:  122-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  123:        return false;
+    %%%%%:  123-block  0
+        -:  124:    }
+        -:  125:
+        -:  126:    // check if the string is only made of numbers
+    #####:  127:    for (int i = 0; i < strlen(quantity); i++) {
+    %%%%%:  127-block  0
+    %%%%%:  127-block  1
+    %%%%%:  127-block  2
+branch  0 never executed
+branch  1 never executed
+    #####:  128:        if (!('0' <= quantity[i] && quantity[i] <= '9')) {
+    %%%%%:  128-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  128-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:  129:            return false;
+    %%%%%:  129-block  0
+        -:  130:        }
+        -:  131:    }
+        -:  132:
+    #####:  133:    return true;
+    %%%%%:  133-block  0
+        -:  134:}
