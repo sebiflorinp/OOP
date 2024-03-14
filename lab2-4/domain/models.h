@@ -4,11 +4,11 @@
 typedef struct {
     int id;
     char type[20];
-    char manufacturer[30];
+    char manufacturer[20];
     char model[20];
     float price;
 }Product;
 
-void createProduct(Product* newProduct);
+Product createProduct(int id, char type[20], char manufacturer[30], char model[20], float price);
 
 #endif //LAB2_4_MODELS_H
