@@ -1,0 +1,114 @@
+        -:    0:Source:/home/sebifp/ubb/oop/lab2-4/tests/repoTests.c
+        -:    0:Graph:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/tests/repoTests.c.gcno
+        -:    0:Data:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/tests/repoTests.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "repoTests.h"
+        -:    2:#include "assert.h"
+        -:    3:#include "../domain/models.h"
+        -:    4:#include "../repos/repos.h"
+        -:    5:
+function testGetProductById called 1 returned 100% blocks executed 78%
+        1:    6:void testGetProductById() {
+        -:    7:    // Arrange
+        -:    8:    Product product1;
+        1:    9:    product1.id = 2;
+        -:   10:    Product product2;
+        1:   11:    product2.id = 1;
+        -:   12:    Product products[100];
+        1:   13:    addProductRepo(products, 0, product1);
+        1:   13-block  0
+call    0 returned 1
+        1:   14:    addProductRepo(products, 1, product2);
+call    0 returned 1
+        -:   15:
+        -:   16:    // Assert
+       1*:   17:    assert(1 == getProductById(products, 2, 1));
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   17-block  0
+call    3 never executed
+       1*:   18:    assert(-1 == getProductById(products, 2, 10));
+        1:   18-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   18-block  1
+call    3 never executed
+        1:   19:}
+        -:   20:
+function testAddProductRepo called 1 returned 100% blocks executed 75%
+        1:   21:void testAddProductRepo() {
+        -:   22:    // Arrange
+        1:   23:    Product product1 = createProduct(1, "Computer", "AAAA", "AAAA", 12.0f, 12);
+        1:   23-block  0
+call    0 returned 1
+        -:   24:    Product products[100];
+        -:   25:
+        -:   26:    // Assert
+       1*:   27:    assert(addProductRepo(products, 0, product1) == true);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   27-block  0
+call    3 never executed
+       1*:   28:    assert(addProductRepo(products, 1, product1) == false);
+        1:   28-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   28-block  1
+call    3 never executed
+        1:   29:}
+        -:   30:
+function testUpdateProductRepo called 1 returned 100% blocks executed 78%
+        1:   31:void testUpdateProductRepo() {
+        -:   32:    // Arrange
+        1:   33:    Product product1 = createProduct(1, "Computer", "AAAA", "AAAA", 12.0f, 12);
+        1:   33-block  0
+call    0 returned 1
+        -:   34:    Product products[100];
+        1:   35:    addProductRepo(products, 0, product1);
+call    0 returned 1
+        -:   36:
+        -:   37:    // Assert
+       1*:   38:    assert(updateProductRepo(products, 1, 1, 30,30) == true);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   38-block  0
+call    3 never executed
+       1*:   39:    assert(updateProductRepo(products, 1, 2, 30, 30) == false);
+        1:   39-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   39-block  1
+call    3 never executed
+        1:   40:}
+        -:   41:
+function testDeleteProductRepo called 1 returned 100% blocks executed 78%
+        1:   42:void testDeleteProductRepo() {
+        -:   43:    // Arrange
+        1:   44:    Product product1 = createProduct(1, "Computer", "AAAA", "AAAA", 12.0f, 12);
+        1:   44-block  0
+call    0 returned 1
+        -:   45:    Product products[100];
+        1:   46:    addProductRepo(products, 0, product1);
+call    0 returned 1
+        -:   47:
+        -:   48:    // Assert
+       1*:   49:    assert(deleteProductRepo(products, 1, 1) == true);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   49-block  0
+call    3 never executed
+       1*:   50:    assert(deleteProductRepo(products, 1, 10) == false);
+        1:   50-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   50-block  1
+call    3 never executed
+        1:   51:}

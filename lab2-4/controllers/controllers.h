@@ -9,6 +9,10 @@ bool addProductController(Product* products, int numberOfProducts, int id, char 
 
 bool updateProductController(Product* products, int numberOfProducts, int productToUpdateId, int newQuantity, float newPrice);
 
-bool deleteProduct(Product* products, int numberOfProducts, int productToDeleteId);
+bool deleteProductController(Product* products, int numberOfProducts, int productToDeleteId);
+
+int getAvailableProducts(Product* products, Product* result, int numberOfProducts, char ordering[20]);
+
+int getProductsFiltered(Product* products, Product* result, int numberOfProducts, char criteria[20], char valueToCompareWith[20]);
 
 #endif //LAB2_4_CONTROLLERS_H

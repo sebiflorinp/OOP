@@ -16,4 +16,10 @@ add_executable(lab2_4 main.c
         controllers/controllers.c
         controllers/controllers.h
         utils/utils.c
-        utils/utils.h)
+        utils/utils.h
+        tests/repoTests.c
+        tests/repoTests.h
+        tests/tests.c
+        tests/tests.h
+        tests/validatorsTest.c
+        tests/validatorsTest.h)

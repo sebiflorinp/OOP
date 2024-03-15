@@ -3,27 +3,389 @@
         -:    0:Data:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/ui/ui.c.gcda
         -:    0:Runs:1
         -:    1:#include <stdio.h>
-        -:    2:#include "ui.h"
-        -:    3:
-function app called 1 returned 100% blocks executed 100%
-        1:    4:void app() {
-        1:    5:    printf("This is a electronics store shop.\n");
-        1:    5-block  0
+        -:    2:#include <stdbool.h>
+        -:    3:#include <stdlib.h>
+        -:    4:#include <string.h>
+        -:    5:#include "ui.h"
+        -:    6:#include "../domain/validators.h"
+        -:    7:#include "../controllers/controllers.h"
+        -:    8:#include "../utils/utils.h"
+        -:    9:
+function app called 1 returned 100% blocks executed 16%
+        1:   10:void app() {
+        1:   11:    printf("This is a electronics store shop.\n");
+        1:   11-block  0
 call    0 returned 1
-        1:    6:    printf(
+        -:   12:
+        1:   13:    bool running = true;
+        -:   14:    Product products[100];
+        -:   15:    Product productsAfterQuery[100];
+        1:   16:    int numberOfProducts = 0;
+        -:   17:    int availableProducts;
+        -:   18:    // needed for fgets to pause the execution of the program
+        -:   19:    char dummyInput[100];
+        2:   20:    while (running) {
+        2:   20-block  0
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        1:   21:        printf(
+        1:   21-block  0
 call    0 returned 1
-        -:    7:            "You can interact with it by using the following commands:\n"
-        -:    8:           "  1. Add new product.\n"
-        -:    9:           "  2. Update product.\n"
-        -:   10:           "  3. Delete product.\n"
-        -:   11:           "  4. Display available products.\n"
-        -:   12:           "  5. Display products filtered by a certain criteria.\n"
-        -:   13:           "  6. Exit the application.\n"
-        -:   14:           );
-        -:   15:    char nume[20];
-        1:   16:    fgets(nume, 20, stdin);
+        -:   22:            "Choose one of the following commands:\n"
+        -:   23:           "  1. Add new product.\n"
+        -:   24:           "  2. Update product.\n"
+        -:   25:           "  3. Delete product.\n"
+        -:   26:           "  4. Display available products.\n"
+        -:   27:           "  5. Display products filtered by a certain criteria.\n"
+        -:   28:           "  6. Exit the application.\n"
+        -:   29:           );
+        -:   30:        char option[20];
+        1:   31:        fgets(option, 20, stdin);
 call    0 returned 1
-        1:   17:    printf("%s", nume);
+        1:   32:        removeTrailingNewLine(option);
 call    0 returned 1
-        1:   18:}
-        -:   19:
+        1:   33:        if (validateOption(option)) {
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+        1:   34:            switch (atoi(option)) {
+        1:   34-block  0
+branch  0 taken 0
+branch  1 taken 0
+branch  2 taken 0
+branch  3 taken 0
+branch  4 taken 0
+branch  5 taken 1
+branch  6 taken 0
+        -:   35:                // add new product feature
+    #####:   36:                case 1:
+        -:   37:
+        -:   38:                    // get type
+    #####:   39:                    printf("Input the type of the product, the product can be a Laptop, a Computer or a Fridge.\n");
+    %%%%%:   39-block  0
+call    0 never executed
+        -:   40:                    char type[20];
+    #####:   41:                    fgets(type, 20, stdin);
+call    0 never executed
+    #####:   42:                    removeTrailingNewLine(type);
+call    0 never executed
+        -:   43:
+        -:   44:                    // get id for new product
+    #####:   45:                    int id = getIdForNewProduct(products, numberOfProducts);
+call    0 never executed
+        -:   46:
+        -:   47:                    // get manufacturer
+    #####:   48:                    printf("Input the manufacturer of the product.\n");
+call    0 never executed
+        -:   49:                    char manufacturer[20];
+    #####:   50:                    fgets(manufacturer, 20, stdin);
+call    0 never executed
+    #####:   51:                    removeTrailingNewLine(manufacturer);
+call    0 never executed
+        -:   52:
+        -:   53:                    // get model
+    #####:   54:                    printf("Input the model of the product.\n");
+call    0 never executed
+        -:   55:                    char model[20];
+    #####:   56:                    fgets(model, 20, stdin);
+call    0 never executed
+    #####:   57:                    removeTrailingNewLine(model);
+call    0 never executed
+        -:   58:
+        -:   59:                    // get price
+    #####:   60:                    printf("Input the price of the product.\n");
+call    0 never executed
+        -:   61:                    char price[20];
+    #####:   62:                    fgets(price, 20, stdin);
+call    0 never executed
+    #####:   63:                    removeTrailingNewLine(price);
+call    0 never executed
+        -:   64:
+        -:   65:                    // get quantity
+    #####:   66:                    printf("Input the quantity of the product.\n");
+call    0 never executed
+        -:   67:                    char quantity[20];
+    #####:   68:                    fgets(quantity, 20, stdin);
+call    0 never executed
+    #####:   69:                    removeTrailingNewLine(quantity);
+call    0 never executed
+        -:   70:
+        -:   71:                    // check if the input data is valid
+    #####:   72:                    if (
+branch  0 never executed
+branch  1 never executed
+    #####:   73:                            validateType(type) &&
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   74:                            validateManufacturer(manufacturer) &&
+    %%%%%:   74-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   75:                            validateModel(model) &&
+    %%%%%:   75-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   76:                            validatePrice(price) &&
+    %%%%%:   76-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   77:                            validateQuantity(quantity)
+    %%%%%:   77-block  0
+call    0 never executed
+    #####:   78:                            ) {
+    %%%%%:   78-block  0
+        -:   79:                        // add the product if the data is valid
+    #####:   80:                        bool result = addProductController(products, numberOfProducts, id, type, manufacturer, model, price, quantity);
+    %%%%%:   80-block  0
+call    0 never executed
+    #####:   81:                        if (result) {
+branch  0 never executed
+branch  1 never executed
+    #####:   82:                            printf("The product was added successfully.\n");
+    %%%%%:   82-block  0
+call    0 never executed
+    #####:   83:                            numberOfProducts++;
+        -:   84:                        } else {
+    #####:   85:                            printf("The product was not added.\n");
+    %%%%%:   85-block  0
+call    0 never executed
+        -:   86:                        }
+        -:   87:
+        -:   88:                    } else {
+    #####:   89:                        printf("The input data is invalid.\n");
+    %%%%%:   89-block  0
+call    0 never executed
+        -:   90:                    }
+    #####:   91:                    break;
+    %%%%%:   91-block  0
+        -:   92:                // update product
+    #####:   93:                case 2:
+        -:   94:                    // check if there are any products to update
+    #####:   95:                    if (numberOfProducts == 0) {
+    %%%%%:   95-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   96:                        printf("There are no products to update.\n");
+    %%%%%:   96-block  0
+call    0 never executed
+        -:   97:                    } else {
+        -:   98:                        // display products and get the id
+    #####:   99:                        printf("Input the id of the product that will be updated.\n");
+    %%%%%:   99-block  0
+call    0 never executed
+    #####:  100:                        displayProducts(products, numberOfProducts);
+call    0 never executed
+        -:  101:                        char idChar[20];
+    #####:  102:                        fgets(idChar, 20, stdin);
+call    0 never executed
+    #####:  103:                        removeTrailingNewLine(idChar);
+call    0 never executed
+        -:  104:
+        -:  105:                        // get the new price
+        -:  106:                        char newPrice[20];
+    #####:  107:                        printf("Input the updated price of the chosen product.\n");
+call    0 never executed
+    #####:  108:                        fgets(newPrice, 20, stdin);
+call    0 never executed
+    #####:  109:                        removeTrailingNewLine(newPrice);
+call    0 never executed
+        -:  110:
+        -:  111:                        // get the new quantity
+        -:  112:                        char newQuantity[20];
+    #####:  113:                        printf("Input the updated quantity of the chosen product\n");
+call    0 never executed
+    #####:  114:                        fgets(newQuantity, 20, stdin);
+call    0 never executed
+    #####:  115:                        removeTrailingNewLine(newQuantity);
+call    0 never executed
+        -:  116:
+        -:  117:                        // check if the data is valid and if it is attempt the update
+    #####:  118:                        if (validatePrice(newPrice) && validateQuantity(newQuantity)) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  118-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  119:                            bool result = updateProductController(
+        -:  120:                                    products,
+        -:  121:                                    numberOfProducts,
+        -:  122:                                    atoi(idChar),
+        -:  123:                                    atoi(newQuantity),
+    #####:  124:                                    atof(newPrice)
+    %%%%%:  124-block  0
+call    0 never executed
+        -:  125:                                    );
+    #####:  126:                            if (!result) {
+branch  0 never executed
+branch  1 never executed
+    #####:  127:                                printf("The update was unsuccessful\n");
+    %%%%%:  127-block  0
+call    0 never executed
+        -:  128:                            } else {
+    #####:  129:                                printf("The update was successful\n");
+    %%%%%:  129-block  0
+call    0 never executed
+        -:  130:                            }
+        -:  131:                        }
+        -:  132:                    }
+    #####:  133:                    break;
+    %%%%%:  133-block  0
+        -:  134:                // delete product
+    #####:  135:                case 3:
+        -:  136:                    // check if there are any products to display
+    #####:  137:                    if (numberOfProducts == 0) {
+    %%%%%:  137-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  138:                        printf("There are no products to delete.\n");
+    %%%%%:  138-block  0
+call    0 never executed
+        -:  139:                    } else {
+        -:  140:                        // display the products and obtain the id of the product that will be deleted
+        -:  141:                        char idChar[20];
+    #####:  142:                        printf("Input the id of the product that will be deleted.\n");
+    %%%%%:  142-block  0
+call    0 never executed
+    #####:  143:                        displayProducts(products, numberOfProducts);
+call    0 never executed
+    #####:  144:                        fgets(idChar, 20, stdin);
+call    0 never executed
+    #####:  145:                        removeTrailingNewLine(idChar);
+call    0 never executed
+        -:  146:
+        -:  147:                        // attempt to delete the product with the input id
+    #####:  148:                        if (validateId(idChar)) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  149:                            bool result = deleteProductController(products, numberOfProducts, atoi(idChar));
+    %%%%%:  149-block  0
+call    0 never executed
+    #####:  150:                            if (result) {
+branch  0 never executed
+branch  1 never executed
+    #####:  151:                                printf("The selected product was deleted successfully.\n");
+    %%%%%:  151-block  0
+call    0 never executed
+    #####:  152:                                numberOfProducts--;
+        -:  153:                            } else {
+    #####:  154:                                printf("The deletion was unsuccessful.\n");
+    %%%%%:  154-block  0
+call    0 never executed
+        -:  155:                            }
+        -:  156:                        } else {
+    #####:  157:                            printf("The input id was invalid.\n");
+    %%%%%:  157-block  0
+call    0 never executed
+        -:  158:                        }
+        -:  159:                    }
+    #####:  160:                    break;
+    %%%%%:  160-block  0
+    #####:  161:                case 4:
+        -:  162:                    // get the ordering of the list
+    #####:  163:                    printf("Input the ordering of the available products: ascending / descending\n");
+    %%%%%:  163-block  0
+call    0 never executed
+        -:  164:                    char ordering[20];
+    #####:  165:                    fgets(ordering, 20, stdin);
+call    0 never executed
+    #####:  166:                    removeTrailingNewLine(ordering);
+call    0 never executed
+        -:  167:                    // check if the input is valid
+    #####:  168:                    if (strcmp(ordering, "ascending") == 0 || strcmp(ordering, "descending") == 0) {
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  168-block  0
+branch  2 never executed
+branch  3 never executed
+        -:  169:                         // get the number of available products
+    #####:  170:                        availableProducts = getAvailableProducts(products, productsAfterQuery,numberOfProducts,
+    %%%%%:  170-block  0
+call    0 never executed
+        -:  171:                                                                 ordering);
+        -:  172:                        // display a table if there are any products available, otherwise show a message
+    #####:  173:                        if (availableProducts > 0) {
+branch  0 never executed
+branch  1 never executed
+    #####:  174:                            displayProducts(productsAfterQuery, availableProducts);
+    %%%%%:  174-block  0
+call    0 never executed
+        -:  175:                        } else {
+    #####:  176:                            printf("There are no products available.\n");
+    %%%%%:  176-block  0
+call    0 never executed
+        -:  177:                        }
+        -:  178:                    } else {
+    #####:  179:                        printf("The input data is invalid.\n");
+    %%%%%:  179-block  0
+call    0 never executed
+        -:  180:                    }
+        -:  181:
+    #####:  182:                    break;
+    %%%%%:  182-block  0
+    #####:  183:                case 5:
+    #####:  184:                    break;
+    %%%%%:  184-block  0
+        1:  185:                case 6:
+        1:  186:                    running = false;
+        1:  187:                    printf("Thank you for using this application.\n");
+        1:  187-block  0
+call    0 returned 1
+        1:  188:                    break;
+        -:  189:            }
+        1:  190:            printf("Press ENTER to continue.\n");
+        1:  190-block  0
+call    0 returned 1
+        1:  191:            fgets(dummyInput, 100, stdin);
+call    0 returned 1
+        -:  192:
+        -:  193:        }
+        -:  194:    }
+        1:  195:}
+        -:  196:
+function displayProducts called 0 returned 0% blocks executed 0%
+    #####:  197:void displayProducts(Product* products, int numberOfProducts) {
+    #####:  198:    printf("+----------+--------------+------------------------+------------------------+---------------+---------------+\n");
+    %%%%%:  198-block  0
+call    0 never executed
+    #####:  199:    printf("|  %-6s  |  %-10s  |  %-20s  |  %-20s  |  %-11s  |  %-11s  |\n", "Id", "Type", "Manufacturer", "Model", "Price", "Quantity");
+call    0 never executed
+    #####:  200:    printf("+----------+--------------+------------------------+------------------------+---------------+---------------+\n");
+call    0 never executed
+    #####:  201:    for (int i = 0; i < numberOfProducts; i++) {
+    %%%%%:  201-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  202:        printf(
+        -:  203:                "|  %-6d  |  %-10s  |  %-20s  |  %-20s  |  %-11f  |  %-11d  |\n",
+    #####:  204:                products[i].id,
+    #####:  205:                products[i].type,
+    #####:  206:                products[i].manufacturer,
+    #####:  207:                products[i].model,
+    #####:  208:                products[i].price,
+    #####:  209:                products[i].quantity
+    %%%%%:  209-block  0
+call    0 never executed
+        -:  210:                );
+    #####:  211:        printf("+----------+--------------+------------------------+------------------------+---------------+---------------+\n");
+call    0 never executed
+        -:  212:    }
+    #####:  213:    if (numberOfProducts == 0) {
+    %%%%%:  213-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  214:        printf("|  %-6s  |  %-10s  |  %-20s  |  %-20s  |  %-11s  |  %-11s  |\n", " ", " ", " ", " ", " ", " ");
+    %%%%%:  214-block  0
+call    0 never executed
+    #####:  215:        printf("+----------+--------------+------------------------+------------------------+---------------+---------------+\n");
+call    0 never executed
+        -:  216:
+        -:  217:    }
+    #####:  218:}
+        -:  219:

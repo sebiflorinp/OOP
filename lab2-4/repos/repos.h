@@ -1,4 +1,5 @@
 #include "../domain/models.h"
+#include <stdbool.h>
 
 #ifndef LAB2_4_REPOS_H
 #define LAB2_4_REPOS_H

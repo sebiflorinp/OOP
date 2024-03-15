@@ -1,0 +1,37 @@
+        -:    0:Source:/home/sebifp/ubb/oop/lab2-4/tests/tests.c
+        -:    0:Graph:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/tests/tests.c.gcno
+        -:    0:Data:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/tests/tests.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "tests.h"
+        -:    2:#include "repoTests.h"
+        -:    3:#include "validatorsTest.h"
+        -:    4:
+function runAllTests called 1 returned 100% blocks executed 100%
+        1:    5:void runAllTests() {
+        -:    6:    // repo tests
+        1:    7:    testGetProductById();
+        1:    7-block  0
+call    0 returned 1
+        1:    8:    testAddProductRepo();
+call    0 returned 1
+        1:    9:    testUpdateProductRepo();
+call    0 returned 1
+        1:   10:    testDeleteProductRepo();
+call    0 returned 1
+        -:   11:
+        -:   12:    // validators tests
+        1:   13:    testValidateId();
+call    0 returned 1
+        1:   14:    testValidateManufacturer();
+call    0 returned 1
+        1:   15:    testValidateModel();
+call    0 returned 1
+        1:   16:    testValidateOption();
+call    0 returned 1
+        1:   17:    testValidatePrice();
+call    0 returned 1
+        1:   18:    testValidateQuantity();
+call    0 returned 1
+        1:   19:    testValidateType();
+call    0 returned 1
+        1:   20:}

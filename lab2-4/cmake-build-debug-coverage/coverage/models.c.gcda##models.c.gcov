@@ -15,16 +15,16 @@
         -:   11: *                quantity: a positive integer
         -:   12: * Post-conditions: an instance of the Product struct
         -:   13: */
-function createProduct called 0 returned 0% blocks executed 0%
-    #####:   14:Product createProduct(int id, char type[20], char manufacturer[20], char model[20], float price, int quantity) {
+function createProduct called 3 returned 100% blocks executed 100%
+        3:   14:Product createProduct(int id, char type[20], char manufacturer[20], char model[20], float price, int quantity) {
         -:   15:    // assigns the values to the newProduct
         -:   16:    Product newProduct;
-    #####:   17:    newProduct.id = id;
-    #####:   18:    strcpy(newProduct.type, type);
-    #####:   19:    strcpy(newProduct.manufacturer, manufacturer);
-    #####:   20:    strcpy(newProduct.model, model);
-    #####:   21:    newProduct.price = price;
-    #####:   22:    newProduct.quantity = quantity;
-    #####:   23:    return newProduct;
-    %%%%%:   23-block  0
+        3:   17:    newProduct.id = id;
+        3:   18:    strcpy(newProduct.type, type);
+        3:   19:    strcpy(newProduct.manufacturer, manufacturer);
+        3:   20:    strcpy(newProduct.model, model);
+        3:   21:    newProduct.price = price;
+        3:   22:    newProduct.quantity = quantity;
+        3:   23:    return newProduct;
+        3:   23-block  0
         -:   24:}

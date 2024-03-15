@@ -75,7 +75,7 @@ bool updateProductRepo(Product* products, int numberOfProducts, int productToUpd
  *                productToDeleteId: a positive integer
  * Post-conditions: a boolean
  */
-bool deleteProduct(Product* products, int numberOfProducts, int productToDeleteId) {
+bool deleteProductRepo(Product* products, int numberOfProducts, int productToDeleteId) {
     // check if there is a product with the id of productToDeleteId
     int position = -1;
     for (int i = 0; i < numberOfProducts; i++) {
@@ -86,7 +86,7 @@ bool deleteProduct(Product* products, int numberOfProducts, int productToDeleteI
 
     // if the product was found, delete it
     if (position != - 1) {
-        for (int i = position; i < numberOfProducts - 1; i++) {
+        for (int i = position; i < numberOfProducts; i++) {
             products[i] = products[i + 1];
             return true;
         }

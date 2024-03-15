@@ -1,0 +1,106 @@
+        -:    0:Source:/home/sebifp/ubb/oop/lab2-4/controllers/controllers.c
+        -:    0:Graph:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/controllers/controllers.c.gcno
+        -:    0:Data:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/controllers/controllers.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <stdlib.h>
+        -:    2:#include <string.h>
+        -:    3:#include "controllers.h"
+        -:    4:#include "../domain/validators.h"
+        -:    5:#include "../repos/repos.h"
+        -:    6:
+        -:    7:/*
+        -:    8: * Attempts to add a new product in the list of products
+        -:    9: * Preconditions: products: a pointer to an array of instance of the Product struct
+        -:   10: *                numberOfProducts: a positive integer
+        -:   11: *                id: a positive integer
+        -:   12: *                type: a char array with the length of 20
+        -:   13: *                manufacturer: a char array with the length of 20
+        -:   14: *                model: a char array with the length of 20
+        -:   15: *                price: a positive float
+        -:   16: *                quantity: a positive integer
+        -:   17: * Post-conditions: a boolean
+        -:   18: */
+function addProductController called 0 returned 0% blocks executed 0%
+    #####:   19:bool addProductController(Product* products, int numberOfProducts, int id, char type[20], char manufacturer[20], char model[20],
+        -:   20:               char price[20], char quantity[20]) {
+        -:   21:    // create the new product
+    #####:   22:    Product newProduct = createProduct(id, type, manufacturer, model, atof(price), atoi(quantity));
+    %%%%%:   22-block  0
+call    0 never executed
+        -:   23:    // add the new product
+    #####:   24:    bool result = addProductRepo(products, numberOfProducts, newProduct);
+call    0 never executed
+    #####:   25:    return result;
+        -:   26:}
+        -:   27:
+function updateProductController called 0 returned 0% blocks executed 0%
+    #####:   28:bool updateProductController(Product* products, int numberOfProducts, int productToUpdateId, int newQuantity, float newPrice) {
+        -:   29:    // attempt to update the product
+    #####:   30:    bool result = updateProductRepo(products, numberOfProducts, productToUpdateId, newQuantity, newPrice);
+    %%%%%:   30-block  0
+call    0 never executed
+    #####:   31:    return result;
+        -:   32:}
+        -:   33:
+function deleteProductController called 0 returned 0% blocks executed 0%
+    #####:   34:bool deleteProductController(Product* products, int numberOfProducts, int productToDeleteId) {
+        -:   35:    // attempt to delete the product
+    #####:   36:    bool result = deleteProductRepo(products, numberOfProducts, productToDeleteId);
+    %%%%%:   36-block  0
+call    0 never executed
+    #####:   37:    return result;
+        -:   38:}
+        -:   39:
+function getAvailableProducts called 0 returned 0% blocks executed 0%
+    #####:   40:int getAvailableProducts(Product* products, Product* result, int numberOfProducts, char ordering[20]) {
+        -:   41:    // go through all products and only copy those that are still available
+    #####:   42:    int availableProducts = 0;
+    #####:   43:    for (int i = 0; i < numberOfProducts; i++) {
+    %%%%%:   43-block  0
+    %%%%%:   43-block  1
+    %%%%%:   43-block  2
+branch  0 never executed
+branch  1 never executed
+    #####:   44:        if (products[i].quantity > 0) {
+    %%%%%:   44-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   45:            result[i] = products[i];
+    #####:   46:            availableProducts++;
+    %%%%%:   46-block  0
+        -:   47:        }
+        -:   48:    }
+        -:   49:
+        -:   50:    // check the ordering and sort the products accordingly
+    #####:   51:    if (strcmp(ordering, "ascending") == 0) {
+    %%%%%:   51-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   52:        for (int i = 0; i < availableProducts - 1; i++) {
+    %%%%%:   52-block  0
+    %%%%%:   52-block  1
+    %%%%%:   52-block  2
+branch  0 never executed
+branch  1 never executed
+    #####:   53:            for (int j = i + 1; j < availableProducts; j++) {
+    %%%%%:   53-block  0
+    %%%%%:   53-block  1
+    %%%%%:   53-block  2
+branch  0 never executed
+branch  1 never executed
+    #####:   54:                if (products[i].price > products[j].price) {
+    %%%%%:   54-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   55:                    Product aux = products[i];
+    #####:   56:                    products[i] = products[j];
+    #####:   57:                    products[j] = aux;
+    %%%%%:   57-block  0
+        -:   58:                }
+        -:   59:            }
+        -:   60:        }
+        -:   61:    }
+        -:   62:
+    #####:   63:    return availableProducts;
+    %%%%%:   63-block  0
+        -:   64:}
