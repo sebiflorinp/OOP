@@ -1,0 +1,29 @@
+        -:    0:Source:/home/sebifp/ubb/oop/lab2-4/tests/utilsTests.c
+        -:    0:Graph:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/tests/utilsTests.c.gcno
+        -:    0:Data:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/tests/utilsTests.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <assert.h>
+        -:    2:#include "utilsTests.h"
+        -:    3:#include "../domain/models.h"
+        -:    4:#include "../utils/utils.h"
+        -:    5:#include "../controllers/controllers.h"
+        -:    6:
+function testGetIdForNewProduct called 1 returned 100% blocks executed 80%
+        1:    7:void testGetIdForNewProduct() {
+        -:    8:    // Arrange
+        -:    9:    Product products[100];
+        1:   10:    addProductController(products, 0, 2, "Computer", "AAAA", "AAAA", "12.2", "1");
+        1:   10-block  0
+call    0 returned 1
+        -:   11:
+        -:   12:    // Act
+        1:   13:    int actual1 = getIdForNewProduct(products, 1);
+call    0 returned 1
+        -:   14:
+        -:   15:    // Assert
+       1*:   16:    assert(actual1 == 3);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   16-block  0
+call    2 never executed
+        1:   17:}

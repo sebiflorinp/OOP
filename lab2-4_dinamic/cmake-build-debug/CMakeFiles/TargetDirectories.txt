@@ -1,0 +1,3 @@
+/home/sebifp/ubb/oop/lab2-4/cmake-build-debug/CMakeFiles/lab2_4.dir
+/home/sebifp/ubb/oop/lab2-4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/sebifp/ubb/oop/lab2-4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,248 @@
+        -:    0:Source:/home/sebifp/ubb/oop/lab2-4/tests/controllerTests.c
+        -:    0:Graph:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/tests/controllerTests.c.gcno
+        -:    0:Data:/home/sebifp/ubb/oop/lab2-4/cmake-build-debug-coverage/CMakeFiles/lab2_4.dir/tests/controllerTests.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <assert.h>
+        -:    2:#include "controllerTests.h"
+        -:    3:#include "../controllers/controllers.h"
+        -:    4:
+function testAddProductController called 1 returned 100% blocks executed 71%
+        1:    5:void testAddProductController() {
+        -:    6:    // Arrange
+        -:    7:    Product products[100];
+        -:    8:
+        -:    9:    // Act
+        1:   10:    bool actual1 = addProductController(products, 0, 1, "Computer", "AAAA", "AAAA", "12.2", "10");
+        1:   10-block  0
+call    0 returned 1
+        1:   11:    bool actual2 = addProductController(products, 1, 1, "Computer", "AAAA", "AAAA", "12.2", "10");
+call    0 returned 1
+        -:   12:
+        -:   13:    // Assert
+       1*:   14:    assert(actual1 == true);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   14-block  0
+call    2 never executed
+       1*:   15:    assert(actual2 == false);
+        1:   15-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   15-block  1
+call    2 never executed
+        -:   16:
+        1:   17:}
+        -:   18:
+function testUpdateProductController called 1 returned 100% blocks executed 75%
+        1:   19:void testUpdateProductController() {
+        -:   20:    // Arrange
+        -:   21:    Product products[100];
+        1:   22:    addProductController(products, 0, 1, "Computer", "AAAA", "AAAA", "12.2", "10");
+        1:   22-block  0
+call    0 returned 1
+        -:   23:
+        -:   24:    // Act
+        1:   25:    bool actual1 = updateProductController(products, 1, 1, 5,5.6f);
+call    0 returned 1
+        1:   26:    bool actual2 = updateProductController(products, 1, 2, 5,5.6f);
+call    0 returned 1
+        -:   27:
+        -:   28:    // Assert
+       1*:   29:    assert(actual1 == true);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   29-block  0
+call    2 never executed
+       1*:   30:    assert(actual2 == false);
+        1:   30-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   30-block  1
+call    2 never executed
+        -:   31:
+        1:   32:}
+        -:   33:
+function testDeleteProductController called 1 returned 100% blocks executed 75%
+        1:   34:void testDeleteProductController() {
+        -:   35:    // Arrange
+        -:   36:    Product products[100];
+        1:   37:    addProductController(products, 0, 1, "Computer", "AAAA", "AAAA", "12.2", "10");
+        1:   37-block  0
+call    0 returned 1
+        -:   38:
+        -:   39:    // Act
+        1:   40:    bool actual1 = deleteProductController(products, 1, 1);
+call    0 returned 1
+        1:   41:    bool actual2 = deleteProductController(products, 1, 2);
+call    0 returned 1
+        -:   42:
+        -:   43:    // Assert
+       1*:   44:    assert(actual1 == true);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   44-block  0
+call    2 never executed
+       1*:   45:    assert(actual2 == false);
+        1:   45-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   45-block  1
+call    2 never executed
+        1:   46:}
+        -:   47:
+function testGetAvailableProducts called 1 returned 100% blocks executed 64%
+        1:   48:void testGetAvailableProducts() {
+        -:   49:    // Arrange
+        -:   50:    Product products[100];
+        -:   51:    Product result[100];
+        1:   52:    addProductController(products, 0, 1, "Computer", "AAAA", "AAAA", "12", "10");
+        1:   52-block  0
+call    0 returned 1
+        1:   53:    addProductController(products, 1, 2, "Computer", "BBBB", "BBBB", "11", "0");
+call    0 returned 1
+        1:   54:    addProductController(products, 2, 3, "Computer", "CCCC", "CCCC", "12", "122");
+call    0 returned 1
+        1:   55:    addProductController(products, 3, 4, "Computer", "DDDD", "DDDD", "2", "1");
+call    0 returned 1
+        1:   56:    addProductController(products, 4, 5, "Computer", "DDDD", "DDDD", "1", "1");
+call    0 returned 1
+        -:   57:
+        -:   58:
+        -:   59:    // Act
+        1:   60:    int actual1 = getAvailableProducts(products, result, 5, "ascending");
+call    0 returned 1
+        -:   61:
+        -:   62:    // Assert
+       1*:   63:    assert(actual1 == 4);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   63-block  0
+call    2 never executed
+       1*:   64:    assert(result[0].id == 5);
+        1:   64-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   64-block  1
+call    2 never executed
+       1*:   65:    assert(result[1].id == 4);
+        1:   65-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   65-block  1
+call    2 never executed
+       1*:   66:    assert(result[2].id == 1);
+        1:   66-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   66-block  1
+call    2 never executed
+       1*:   67:    assert(result[3].id == 3);
+        1:   67-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   67-block  1
+call    2 never executed
+        -:   68:
+        -:   69:    // Act
+        1:   70:    int actual2 = getAvailableProducts(products, result, 5, "descending");
+        1:   70-block  0
+call    0 returned 1
+        -:   71:
+        -:   72:    // Assert
+       1*:   73:    assert(actual2 == 4);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   73-block  0
+call    2 never executed
+       1*:   74:    assert(result[0].id == 3);
+        1:   74-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   74-block  1
+call    2 never executed
+       1*:   75:    assert(result[1].id == 1);
+        1:   75-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   75-block  1
+call    2 never executed
+       1*:   76:    assert(result[2].id == 4);
+        1:   76-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   76-block  1
+call    2 never executed
+       1*:   77:    assert(result[3].id == 5);
+        1:   77-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   77-block  1
+call    2 never executed
+        1:   78:}
+        -:   79:
+function testGetProductsFiltered called 1 returned 100% blocks executed 68%
+        1:   80:void testGetProductsFiltered() {
+        -:   81:    // Arrange
+        -:   82:    Product products[100];
+        -:   83:    Product result[100];
+        1:   84:    addProductController(products, 0, 1, "Computer", "AAAA", "AAAA", "12.2", "10");
+        1:   84-block  0
+call    0 returned 1
+        1:   85:    addProductController(products, 1, 2, "Computer", "BBBB", "BBBB", "12", "0");
+call    0 returned 1
+        1:   86:    addProductController(products, 2, 3, "Computer", "CCCC", "CCCC", "11", "12");
+call    0 returned 1
+        -:   87:
+        -:   88:    // Act
+        1:   89:    int actual1 = getProductsFiltered(products, result, 3, "manufacturer", "AAAA");
+call    0 returned 1
+        -:   90:
+        -:   91:    // Assert
+       1*:   92:    assert(actual1 == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   92-block  0
+call    2 never executed
+       1*:   93:    assert(result[0].id == 1);
+        1:   93-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   93-block  1
+call    2 never executed
+        -:   94:
+        -:   95:    // Act
+        1:   96:    int actual2 = getProductsFiltered(products, result, 3, "price", "12");
+        1:   96-block  0
+call    0 returned 1
+        -:   97:
+        -:   98:    // Assert
+       1*:   99:    assert(actual1 == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   99-block  0
+call    2 never executed
+       1*:  100:    assert(result[0].id == 2);
+        1:  100-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  100-block  1
+call    2 never executed
+        -:  101:
+        -:  102:    // Act
+        1:  103:    int actual3 = getProductsFiltered(products, result, 3, "quantity", "0");
+        1:  103-block  0
+call    0 returned 1
+        -:  104:
+        -:  105:    // Assert
+       1*:  106:    assert(actual1 == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  106-block  0
+call    2 never executed
+       1*:  107:    assert(result[0].id == 2);
+        1:  107-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  107-block  1
+call    2 never executed
+        1:  108:}
